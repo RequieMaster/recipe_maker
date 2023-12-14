@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test27/firebase_auth.dart';
 import 'package:test27/register_screen.dart';
 
 import 'first_screen.dart';
@@ -129,10 +130,8 @@ class _LoginPageState extends State<LoginPage> {
   Future<bool> performVerification() async {
     try {
       // Use Firebase Authentication to sign in with email and password
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
+      await FirebaseConnect().loginUser(email: emailController.text.trim(), password: passwordController.text.trim());
+      
 
       // If the sign-in is successful, return true
       return true;
