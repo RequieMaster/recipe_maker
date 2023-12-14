@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test27/second_screen.dart';
 import 'package:test27/third_screen.dart';
@@ -12,23 +11,23 @@ class FirstScreen extends StatefulWidget {
 
 class _FirstScreenState extends State<FirstScreen> {
   var recipes = [
-    Recipe(
+    const Recipe(
       name: 'Pizza Margherita',
       description: 'This is a description',
     ),
-    Recipe(
+    const Recipe(
       name: 'Pizza Margherita 1',
       description: 'This is a description',
     ),
-    Recipe(
+    const Recipe(
       name: 'Pizza Margherita 2',
       description: 'This is a description',
     ),
-    Recipe(
+    const Recipe(
       name: 'Pizza Margherita 3',
       description: 'This is a description',
     ),
-    Recipe(
+    const Recipe(
       name: 'Pizza Margherita 4',
       description: 'This is a description',
     ),
@@ -86,7 +85,7 @@ class _FirstScreenState extends State<FirstScreen> {
                               child: Image.asset('assets/images/pizza.jpg'),
                             ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                              padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'first_screen.dart';
@@ -13,8 +12,8 @@ class ThirdScreen extends StatefulWidget {
 }
 
 class _ThirdScreenState extends State<ThirdScreen> {
-  TextEditingController _recipeNameController = TextEditingController();
-  TextEditingController _recipeDescriptionController = TextEditingController();
+  final TextEditingController _recipeNameController = TextEditingController();
+  final TextEditingController _recipeDescriptionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +23,12 @@ class _ThirdScreenState extends State<ThirdScreen> {
       ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Column(
             children: [
               TextField(
                 controller: _recipeNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Recipe Name',
                 ),
@@ -37,7 +36,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
               const SizedBox(height: 12),
               TextField(
                 controller: _recipeDescriptionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Recipe Description',
                 ),

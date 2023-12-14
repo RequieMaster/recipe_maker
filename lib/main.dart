@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'firebase_options.dart';
 import 'first_screen.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+Future<void> main() async {
+  await Firebase.initializeApp(
+    /*options: DefaultFirebaseOptions.currentPlatform).then(
+          (FirebaseApp value) => Get.put(AuthenticationRepository()*/);
   runApp(const MyApp());
 }
 
