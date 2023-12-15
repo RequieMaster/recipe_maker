@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:test27/second_screen.dart';
 import 'package:test27/third_screen.dart';
 
+import 'fetch_data.dart';
+
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
 
   @override
   State<FirstScreen> createState() => _FirstScreenState();
+
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-  var recipes = [
+  /*var recipes = [
     const Recipe(
       name: 'Pizza Margherita',
       description: 'This is a description',
@@ -31,7 +34,8 @@ class _FirstScreenState extends State<FirstScreen> {
       name: 'Pizza Margherita 4',
       description: 'This is a description',
     ),
-  ];
+  ];*/
+  List<Recipe> recipes =  FirebaseConnect().getRecipes() as List<Recipe>;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +53,7 @@ class _FirstScreenState extends State<FirstScreen> {
                       onRecipeAdded: (recipe) {
                         if (recipe != null) {
                           setState(() {
-                            recipes.add(recipe);
+                            recipes = FirebaseConnect().getRecipes() as List<Recipe>;
                           });
                         }
                       },

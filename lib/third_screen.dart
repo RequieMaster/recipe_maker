@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'fetch_data.dart';
 import 'first_screen.dart';
 
 class ThirdScreen extends StatefulWidget {
@@ -60,6 +61,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
     var description = _recipeDescriptionController.text;
     if (name.isNotEmpty && description.isNotEmpty) {
       widget.onRecipeAdded(Recipe(name: name, description: description));
+      FirebaseConnect().addRecipe(name: name, description: description);
       Navigator.pop(context);
       // Navigator.pop(context, Recipe(name: name, description: description));
     }
