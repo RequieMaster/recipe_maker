@@ -20,11 +20,18 @@ class FirebaseConnect {
     }
   }
 
-  Stream<List<Recipe>> getRecipes() {
-      return _databaseReference.collection('recipe').snapshots().map((QuerySnapshot snapshot) {
-        return snapshot.docs.map((QueryDocumentSnapshot query) {
-          return Recipe(name: query['name'] ?? '', description: query['description'] ?? '');
-        }).toList();
-      });
+  Future<List<Recipe>> getRecipes() async {
+    try {
+      QuerySnapshot snapshot = await _databaseReference.collection('recipe').get();
+
+      List<Recipe> recipes = snapshot.docs.map((QueryDocumentSnapshot query) {
+        return Recipe(name: query['name'] ?? '', description: query['description'] ?? '');
+      }).toList();
+      return recipes;
+    } catch (e) {
+      // Handle exceptions as needed
+      print("Error fetching recipes: $e");
+      return []; // or throw an exception if appropriate
+    }
   }
 }

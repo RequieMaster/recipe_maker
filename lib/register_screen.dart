@@ -6,7 +6,7 @@ import 'package:test27/firebase_auth.dart';
 import 'package:test27/login_screen.dart';
 
 import 'first_screen.dart';
-
+/*
 void main() {
   runApp(MyApp());
 }
@@ -19,9 +19,11 @@ class MyApp extends StatelessWidget {
       home: RegisterPage(),
     );
   }
-}
+}*/
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -98,8 +100,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: TextButton(
                   onPressed: () {
                     registerUser();
-                    //Navigator.push(
-                      //  context, MaterialPageRoute(builder: (_) => LoginPage()));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => LoginPage()));
                   },
                   child: const Text(
                     'Register',

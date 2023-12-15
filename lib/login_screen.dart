@@ -5,7 +5,7 @@ import 'package:test27/register_screen.dart';
 import 'first_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
-
+/*
 void main() {
   runApp(MyApp());
 }
@@ -18,9 +18,11 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
     );
   }
-}
+}*/
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }

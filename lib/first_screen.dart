@@ -35,8 +35,24 @@ class _FirstScreenState extends State<FirstScreen> {
       description: 'This is a description',
     ),
   ];*/
-  List<Recipe> recipes =  FirebaseConnect().getRecipes() as List<Recipe>;
+  //List<Recipe> recipes =  FirebaseConnect().getRecipes() as List<Recipe>;
+  // Assuming this is inside an asynchronous function
+  List<Recipe> recipes = [];
 
+
+  @override
+  void initState() {
+
+    super.initState();
+    retrieveFirebaseData();
+  }
+
+  retrieveFirebaseData()async {
+    recipes = await FirebaseConnect().getRecipes();
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

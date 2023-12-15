@@ -46,6 +46,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
               ElevatedButton(
                 onPressed: () {
                   _saveRecipe();
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => const FirstScreen()));
                 },
                 child: const Text('Add Recipe'),
               ),
@@ -59,8 +61,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
   _saveRecipe() {
     var name = _recipeNameController.text;
     var description = _recipeDescriptionController.text;
+    print(name);
+    print(description);
+    print(name.isNotEmpty);
+    print(description.isNotEmpty);
     if (name.isNotEmpty && description.isNotEmpty) {
-      widget.onRecipeAdded(Recipe(name: name, description: description));
       FirebaseConnect().addRecipe(name: name, description: description);
       Navigator.pop(context);
       // Navigator.pop(context, Recipe(name: name, description: description));
